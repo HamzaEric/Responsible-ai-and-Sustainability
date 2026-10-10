@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable & Responsible AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        iframe { transition: opacity 0.2s ease-in-out; }
+        .fade-out { opacity: 0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 flex h-screen overflow-hidden font-sans">
+
+    <!-- Sidebar -->
+    <aside class="w-80 bg-emerald-950 text-slate-100 flex flex-col shadow-2xl z-10">
+        <div class="p-6 border-b border-emerald-800">
+            <h1 class="text-2xl font-bold text-emerald-400 mb-1">Responsible AI</h1>
+            <p class="text-sm text-emerald-200">Interactive Course Modules</p>
+        </div>
+        
+        <nav class="flex-1 px-4 py-6 space-y-3 overflow-y-auto">
+            <button onclick="loadPage('Bias_Fairness_Accountability.html', this)" class="nav-btn w-full text-left px-4 py-3 rounded-lg bg-emerald-800 text-white font-medium hover:bg-emerald-700 transition">
+                1. Bias, Fairness & Accountability
+            </button>
+            <button onclick="loadPage('Synthetic_Images.html', this)" class="nav-btn w-full text-left px-4 py-3 rounded-lg text-emerald-100 hover:bg-emerald-800 transition">
+                2. Generative Models & Synthetic Media
+            </button>
+            <button onclick="loadPage('Sustainability_&_Cost_Of_Intelligence.html', this)" class="nav-btn w-full text-left px-4 py-3 rounded-lg text-emerald-100 hover:bg-emerald-800 transition">
+                3. Sustainability & Cost of Intelligence
+            </button>
+            <button onclick="loadPage('The_Future_Of_DeepLearning.html', this)" class="nav-btn w-full text-left px-4 py-3 rounded-lg text-emerald-100 hover:bg-emerald-800 transition">
+                4. The Future of Deep Learning
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 bg-white relative">
+        <iframe id="content-frame" src="Bias_Fairness_Accountability.html" class="w-full h-full border-none" title="Content Viewer"></iframe>
+    </main>
+
+    <script>
+        function loadPage(src, btn) {
+            const frame = document.getElementById('content-frame');
+            frame.classList.add('fade-out');
+            
+            setTimeout(() => {
+                frame.src = src;
+                frame.classList.remove('fade-out');
+            }, 200);
+
+            document.querySelectorAll('.nav-btn').forEach(b => {
+                b.classList.remove('bg-emerald-800', 'text-white', 'font-medium');
+                b.classList.add('text-emerald-100');
+            });
+            
+            btn.classList.remove('text-emerald-100');
+            btn.classList.add('bg-emerald-800', 'text-white', 'font-medium');
+        }
+    </script>
+</body>
+</html>

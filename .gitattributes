@@ -1,0 +1,4 @@
+NB01_assets/** filter=lfs diff=lfs merge=lfs -text
+NB02_assets/** filter=lfs diff=lfs merge=lfs -text
+NB03_assets/** filter=lfs diff=lfs merge=lfs -text
+NB04_assets/** filter=lfs diff=lfs merge=lfs -text
